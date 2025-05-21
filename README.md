@@ -62,7 +62,6 @@ donation-admin/
 │   ├── components/       # Vue components
 │   ├── views/            # Application views/pages
 │   ├── router/           # Vue Router configuration
-│   ├── store/            # State management (e.g., Pinia)
 │   └── main.ts           # App entry point
 ├── .eslintrc.js          # ESLint configuration
 ├── tailwind.config.js    # Tailwind CSS configuration
