@@ -1,10 +1,27 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view />
+  <div id="app">
+    <NavBar v-if="showNavBar" />
+    <router-view />
+  </div>
 </template>
+
+<script lang="ts">
+import { computed, defineComponent } from "vue";
+import NavBar from "@/components/NavBar.vue";
+import { useRoute } from "vue-router";
+
+export default defineComponent({
+  name: "App",
+  components: { NavBar },
+  setup() {
+    const route = useRoute();
+
+    const showNavBar = computed(() => route.path !== "/login");
+
+    return { showNavBar };
+  },
+});
+</script>
 
 <style>
 #app {
@@ -13,18 +30,5 @@
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-}
-
-nav {
-  padding: 30px;
-}
-
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-nav a.router-link-exact-active {
-  color: #42b983;
 }
 </style>

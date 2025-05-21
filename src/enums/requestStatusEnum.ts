@@ -1,0 +1,6 @@
+export enum RequestEnum {
+  PENDING = "PENDING",
+  APPROVED = "APPROVED",
+  FINISHED = "FINISHED",
+  CANCELED = "CANCELED",
+}
