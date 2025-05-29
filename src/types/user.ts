@@ -5,5 +5,5 @@ export interface User {
   password: string;
 }
 
-export interface CreateUserDto extends Omit<User, "id"> {}
-export interface UpdateUserDto extends Partial<CreateUserDto> {}
+export type CreateUserDto = Omit<User, "id">;
+export type UpdateUserDto = Partial<CreateUserDto>;

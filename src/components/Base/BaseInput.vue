@@ -15,7 +15,7 @@
 </template>
 
 <script lang="ts" setup>
-import { defineProps, defineEmits, toRef, watch, ref } from "vue";
+import { defineProps, defineEmits, watch, ref } from "vue";
 
 const props = defineProps<{
   modelValue: string | Date;
@@ -29,7 +29,9 @@ const emit = defineEmits<{
   (e: "update:modelValue", value: string): void;
 }>();
 
-const formatDate = (val: string): string => val.split("T")[0];
+const formatDate = (val: string): string => {
+  return new Date(val).toISOString()?.split("T")[0] || "";
+};
 
 const internalValue = ref<string>(
   props.type === "date"

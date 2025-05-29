@@ -47,7 +47,7 @@ export default defineComponent({
         password: password.value,
       };
 
-      const { success, data, message } = await authService.login(credentials);
+      const { success, data } = await authService.login(credentials);
       if (success && data) {
         localStorage.setItem("token", data.accessToken);
         const { id } = await userService.getByEmail(credentials.email);

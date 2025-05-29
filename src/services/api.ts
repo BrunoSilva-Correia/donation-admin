@@ -5,7 +5,7 @@ import { authService } from "./authService";
 const toast = useToast();
 
 const api = axios.create({
-  baseURL: "http://localhost:3000/api",
+  baseURL: "http://localhost:3002/api",
   headers: {
     "Content-Type": "application/json",
   },

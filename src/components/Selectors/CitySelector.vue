@@ -24,12 +24,17 @@ const emit = defineEmits(["update:modelValue"]);
 const cities = ref<{ id: number; name: string }[]>([]);
 const internalValue = ref(props.modelValue || "");
 
+type City = {
+  id: string;
+  nome: string;
+};
+
 onMounted(async () => {
   const res = await fetch(
     "https://servicodados.ibge.gov.br/api/v1/localidades/municipios"
   );
   const data = await res.json();
-  cities.value = data.map((item: any) => ({
+  cities.value = data.map((item: City) => ({
     id: item.id,
     name: item.nome,
   }));

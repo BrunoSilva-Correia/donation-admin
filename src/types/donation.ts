@@ -6,5 +6,5 @@ export interface Donation {
   donatorId: string;
 }
 
-export interface CreateDonationDto extends Omit<Donation, "id"> {}
-export interface UpdateDonationDto extends Partial<CreateDonationDto> {}
+export type CreateDonationDto = Omit<Donation, "id">;
+export type UpdateDonationDto = Partial<CreateDonationDto>;
