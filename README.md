@@ -75,6 +75,11 @@ donation-admin/
 This application consumes the RESTful API provided by the [donation-manager](https://github.com/BrunoSilva-Correia/donation-manager) backend.
 Make sure the API is running and properly configured for the admin panel to work correctly.
 
+## Observations
+
+- This application consumes an IBGE API that retrieves all cities from Brazil. 
+- To set a donation phone it should follows Brazil type: +55 DDD 9 number 
+
 ## Contribution
 
 Contributions are welcome! Feel free to open issues or submit pull requests for improvements, bug fixes, or new features.
